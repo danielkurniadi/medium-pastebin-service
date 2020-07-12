@@ -2,7 +2,6 @@ package mongo
 
 import (
 	"context"
-	"fmt"
 	"time"
 
 	"github.com/iqdf/pastebin-service/domain"
@@ -88,7 +87,7 @@ func NewPasteRepo(client *mongo.Client, dbName string) *PasteMongoRepo {
 		},
 	}
 
- 	collection.Indexes().CreateMany(
+	collection.Indexes().CreateMany(
 		context.Background(),
 		dbIndices,
 	)
